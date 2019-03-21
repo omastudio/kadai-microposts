@@ -44,9 +44,9 @@ class User < ApplicationRecord
   
   #お気に入り追加、削除の機能実装
   def add_to_favorite(target_post)
-    unless target_post.user == self
-      self.favorites.find_or_create_by(micropost_id: target_post.id)
-    end
+    #unless target_post.user == self
+    self.favorites.find_or_create_by(micropost_id: target_post.id)
+    #end
   end
   
   def remove_favorite(target_post)
