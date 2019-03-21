@@ -11,13 +11,15 @@
         <div>
           <p><%= micropost.content %></p>
         </div>
-        <div>
+        <div class="btn-toolbar">
+          <div class="btn-group">
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
-          <% unless current_user == micropost.user %>
+          </div>
+          <div class="btn-group">
             <%= render 'favorites/favorite_button', micropost: micropost %>
-          <% end %>
+          </div>
         </div>
       </div>
     </li>
